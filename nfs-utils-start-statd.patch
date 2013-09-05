@@ -1,0 +1,15 @@
+diff -aurN nfs-utils-1.2.8.orig/utils/statd/start-statd nfs-utils-1.2.8/utils/statd/start-statd
+--- nfs-utils-1.2.8.orig/utils/statd/start-statd	2013-09-04 22:00:15.054155544 +0200
++++ nfs-utils-1.2.8/utils/statd/start-statd	2013-09-04 22:00:56.767758206 +0200
+@@ -1,9 +1,9 @@
+-#!/bin/bash -p
++#!/bin/sh
+ # nfsmount calls this script when mounting a filesystem with locking
+ # enabled, but when statd does not seem to be running (based on
+ # /var/run/rpc.statd.pid).
+ # It should run statd with whatever flags are apropriate for this
+ # site.
+-PATH=/sbin:/usr/sbin
++PATH=/usr/sbin
+ exec rpc.statd --no-notify
+ 
