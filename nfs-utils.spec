@@ -1,7 +1,7 @@
 Summary:	Network File System utilities
 Name:		nfs-utils
 Version:	1.2.8
-Release:	3
+Release:	4
 License:	GPL v2
 Group:		Networking
 Source0:	http://downloads.sourceforge.net/project/nfs/%{name}/%{version}/%{name}-%{version}.tar.bz2
@@ -113,7 +113,7 @@ fi
 %attr(755,root,root) %{_sbindir}/showmount
 %attr(755,root,root) %{_sbindir}/start-statd
 
-%dir /var/lib/nfs
+%attr(755,nobody,root) %dir /var/lib/nfs
 %attr(600,rpcstatd,rpcstatd) %config(noreplace) %verify(not md5 mtime size) /var/lib/nfs/state
 %attr(700,rpcstatd,rpcstatd) %dir /var/lib/nfs/sm
 %attr(700,rpcstatd,rpcstatd) %dir /var/lib/nfs/sm.bak
