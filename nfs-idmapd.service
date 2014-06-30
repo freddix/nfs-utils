@@ -1,0 +1,8 @@
+[Unit]
+Description=NFSv4 ID-name mapping service
+
+PartOf=nfs-utils.service
+
+[Service]
+Type=forking
+ExecStart=/usr/sbin/rpc.idmapd
