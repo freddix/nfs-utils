@@ -1,11 +1,11 @@
 Summary:	Network File System utilities
 Name:		nfs-utils
-Version:	1.3.0
-Release:	3
+Version:	1.3.1
+Release:	1
 License:	GPL v2
 Group:		Networking
 Source0:	http://downloads.sourceforge.net/project/nfs/%{name}/%{version}/%{name}-%{version}.tar.bz2
-# Source0-md5:	3ac3726eda563946d1f44ac3e5b61d56
+# Source0-md5:	97f157f954edb6d4d4385a0c5986f36f
 Source1:	idmapd.conf
 Source10:	nfs-blkmap.service
 Source11:	nfs-blkmap.target
@@ -15,7 +15,6 @@ Source14:	nfs-utils.service
 Source15:	rpc-statd-notify.service
 Source16:	var-lib-nfs-rpc_pipefs.mount
 Patch0:		%{name}-mtab-sym.patch
-Patch1:		%{name}-start-statd.patch
 BuildRequires:	device-mapper-devel
 BuildRequires:	keyutils-devel
 BuildRequires:	libblkid-devel
@@ -68,7 +67,6 @@ Network File System server and utilities.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 %configure \
